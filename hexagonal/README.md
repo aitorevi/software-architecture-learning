@@ -183,6 +183,24 @@ Capturan ocurrencias significativas del negocio:
 Puertos (interfaces) en dominio, adaptadores en infraestructura:
 - `BookRepository` (puerto) → `InMemoryBookRepository`, `PgBookRepository` (adaptadores)
 
+## Documentación Adicional
+
+### Layer Guides
+- [📖 Domain Guide](./src/domain/README.md) - Entities, Value Objects, and Services
+- [🎬 Application Guide](./src/application/README.md) - Use Cases and DTOs
+- [🔧 Infrastructure Guide](./src/infrastructure/README.md) - Adapters and Persistence
+
+### Complete Pedagogical Guides
+- [🗄️ **Repository Pattern Guide**](./docs/GUIA_REPOSITORY_PATTERN.md) - The definitive guide on Repositories (Spanish)
+  - What is the Repository pattern and why it exists
+  - Port vs Adapter: The key to hexagonal architecture
+  - DTOs vs Domain Entities
+  - Mapping between layers (HTTP → DTO → Entity → DB)
+  - Implementations: InMemory, PostgreSQL, Fake
+  - Testing with repositories
+  - Common mistakes and how to avoid them
+  - Frequently asked questions
+
 ## Licencia
 
 MIT

@@ -494,9 +494,21 @@ Ahora que ya has visto cómo funciona, aquí tienes unos ejercicios pa' practica
 
 ### Documentación por Capas
 
-- [📖 Guía del Dominio](./docs/DOMAIN.md) - Entidades, Value Objects y Servicios
-- [🎬 Guía de Aplicación](./docs/APPLICATION.md) - Casos de Uso y DTOs
-- [🔧 Guía de Infraestructura](./docs/INFRASTRUCTURE.md) - Adaptadores y Persistencia
+- [📖 Guía del Dominio](./src/domain/README.md) - Entidades, Value Objects y Servicios
+- [🎬 Guía de Aplicación](./src/application/README.md) - Casos de Uso y DTOs
+- [🔧 Guía de Infraestructura](./src/infrastructure/README.md) - Adaptadores y Persistencia
+
+### Guías Pedagógicas Completas
+
+- [🗄️ **Patrón Repository**](./docs/GUIA_REPOSITORY_PATTERN.md) - La guía definitiva sobre Repositories
+  - Qué es el patrón Repository y por qué existe
+  - Puerto vs Adaptador: La clave de la hexagonal
+  - DTOs vs Entidades de Dominio
+  - Mapping entre capas (HTTP → DTO → Entidad → BD)
+  - Implementaciones: InMemory, PostgreSQL, Fake
+  - Testing con repositories
+  - Errores comunes y cómo evitarlos
+  - Preguntas frecuentes
 
 ### Lecturas Recomendadas
 
