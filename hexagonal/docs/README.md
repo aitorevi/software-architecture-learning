@@ -22,6 +22,19 @@
 **Tiempo de lectura**: 45-60 minutos
 **Incluye**: Diagramas, código comentado línea por línea, ejemplos completos
 
+### 📊 [Diagramas del Patrón Repository](./DIAGRAMAS_REPOSITORY_PATTERN.md)
+
+**Diagramas Mermaid** que ilustran visualmente:
+
+- ✅ Flujo completo de una petición (HTTP → Controller → UseCase → Repository → BD)
+- ✅ Inversión de dependencias (cómo las flechas apuntan hacia el dominio)
+- ✅ Diagrama de secuencia (orden temporal de las llamadas)
+- ✅ Capas y responsabilidades
+
+**Nivel**: Todos
+**Tiempo de lectura**: 10 minutos
+**Ideal para**: Entender visualmente antes de leer la guía completa
+
 ---
 
 ## Guías por Venir
