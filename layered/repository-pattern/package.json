@@ -1,0 +1,19 @@
+{
+  "name": "repository-pattern-example",
+  "version": "1.0.0",
+  "description": "Ejemplo básico del patrón Repository - Aprendiendo paso a paso con el Profe Millo",
+  "main": "src/infrastructure/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/infrastructure/index.ts",
+    "test": "node --import tsx --test tests/*.test.ts"
+  },
+  "keywords": ["repository-pattern", "architecture", "learning"],
+  "author": "El Profe Millo",
+  "license": "MIT",
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.6"
+  }
+}
