@@ -1,1 +1,0 @@
-export { CreateShipmentOnOrderPlacedHandler } from './CreateShipmentOnOrderPlacedHandler';

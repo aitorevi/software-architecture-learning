@@ -36,10 +36,10 @@ hexagonal/
 - Testing del dominio sin dependencias externas
 
 **Documentación**:
-- [README Principal](./hexagonal/README_ES.md) - Guía completa del proyecto
-- [Guía del Dominio](./hexagonal/src/domain/README.md) - Entidades, VOs y servicios
-- [Guía de Aplicación](./hexagonal/src/application/README.md) - Casos de uso
-- [Guía de Infraestructura](./hexagonal/src/infrastructure/README.md) - Adaptadores
+- [README Principal](architecture/README_ES.md) - Guía completa del proyecto
+- [Guía del Dominio](architecture/src/domain/README.md) - Entidades, VOs y servicios
+- [Guía de Aplicación](architecture/src/application/README.md) - Casos de uso
+- [Guía de Infraestructura](architecture/src/infrastructure/README.md) - Adaptadores
 
 ### 2. Task Manager - Vertical Slicing
 
@@ -152,7 +152,7 @@ src/
 ### Nivel 1: Fundamentos (Semana 1-2)
 
 1. **Empieza con Library System** (hexagonal)
-   - Lee el [README_ES.md](./hexagonal/README_ES.md) completo
+   - Lee el [README_ES.md](architecture/README_ES.md) completo
    - Explora el código de dominio
    - Revisa los casos de uso
    - Mira los adaptadores
