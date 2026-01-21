@@ -1,0 +1,21 @@
+[submodule "layered/repository-pattern"]
+	path = layered/repository-pattern
+	url = https://github.com/aitorevi/architecture-layered-repository.git
+[submodule "layered/controller-service"]
+	path = layered/controller-service
+	url = https://github.com/aitorevi/architecture-layered-controller-service.git
+[submodule "hexagonal/library-system"]
+	path = hexagonal/library-system
+	url = https://github.com/aitorevi/architecture-hexagonal-library.git
+[submodule "slicing/vertical-slicing-tasks"]
+	path = slicing/vertical-slicing-tasks
+	url = https://github.com/aitorevi/architecture-vertical-slicing.git
+[submodule "slicing/cqrs-inventory"]
+	path = slicing/cqrs-inventory
+	url = https://github.com/aitorevi/architecture-cqrs.git
+[submodule "ddd/event-driven-orders"]
+	path = ddd/event-driven-orders
+	url = https://github.com/aitorevi/architecture-event-driven.git
+[submodule "ddd/bounded-contexts-ecommerce"]
+	path = ddd/bounded-contexts-ecommerce
+	url = https://github.com/aitorevi/architecture-bounded-contexts.git
