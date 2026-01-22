@@ -1,8 +1,11 @@
-# Controller-Service Example
+# Controller-Service - Ejemplo Práctico
+
+> **Tutorial by el Profe Millo**
+> _"Si entiendes el flujo HTTP → Controller → Service → Repository, ya sabes el 80% de cómo funcionan las aplicaciones web modernas. ¡Ea, a darle chicha!"_
 
 > **Nivel:** Intermedio-básico
-> **Prerrequisito:** [repository-pattern-example](../repository-pattern-example)
-> **Siguiente paso:** [hexagonal (library-system)](../hexagonal)
+> **Prerrequisito:** [Repository Pattern](../repository-pattern)
+> **Siguiente paso:** [Library System (Hexagonal)](../../hexagonal/library-system)
 
 ## ¿Qué aprenderás?
 
@@ -205,6 +208,14 @@ curl -X DELETE http://localhost:3000/tasks/{id}
 | **Infrastructure** | `TaskController.ts` | Traduce HTTP ↔ Service |
 | **Infrastructure** | `server.ts` | Configura Express |
 | **Infrastructure** | `index.ts` | Conecta todas las piezas |
+
+## Siguiente Paso
+
+Una vez domines este proyecto, estás listo para:
+
+→ **[Library System (Arquitectura Hexagonal)](../../hexagonal/library-system)** - Value Objects, DTOs, Eventos de Dominio
+
+---
 
 ## El Profe Millo dice...
 

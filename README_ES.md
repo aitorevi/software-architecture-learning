@@ -7,8 +7,12 @@ Bienvenido a esta colección de proyectos para aprender **patrones de arquitectu
 ```
 software-architecture-learning/
 ├── layered/                          # Arquitectura por Capas
+│   ├── tdd-kata/                     # TDD con 3 katas (FizzBuzz, String Calculator, Shopping Cart)
 │   ├── repository-pattern/           # Patrón repositorio básico
 │   └── controller-service/           # Controller-Service-Repository
+├── patterns/                         # Patrones Fundamentales
+│   ├── error-handling/               # Error Handling con Result/Either Pattern
+│   └── specification-pattern/        # Specification Pattern para filtrado inteligente
 ├── hexagonal/                        # Arquitectura Hexagonal
 │   └── library-system/               # Sistema de biblioteca
 ├── slicing/                          # Patrones de Organización
@@ -23,8 +27,11 @@ software-architecture-learning/
 
 | Nivel | Proyecto | Patrón | Descripción |
 |-------|----------|--------|-------------|
+| Principiante | [tdd-kata](./layered/tdd-kata) | TDD | Aprende TDD con 3 katas progresivas (FizzBuzz, String Calculator, Shopping Cart) |
 | Principiante | [repository-pattern](./layered/repository-pattern) | Capas | Introducción al patrón repositorio |
 | Principiante | [controller-service](./layered/controller-service) | Capas | Estructura Controller-Service-Repository |
+| Intermedio | [error-handling](./patterns/error-handling) | Result/Either | Manejo de errores funcional con el patrón Result |
+| Intermedio | [specification-pattern](./patterns/specification-pattern) | Specification | Encapsular reglas de negocio de filtrado en objetos componibles |
 | Intermedio | [library-system](./hexagonal/library-system) | Hexagonal | Arquitectura hexagonal completa con puertos y adaptadores |
 | Intermedio | [vertical-slicing-tasks](./slicing/vertical-slicing-tasks) | Vertical Slicing | Organización del código por features |
 | Avanzado | [cqrs-inventory](./slicing/cqrs-inventory) | CQRS | Separar modelos de lectura y escritura |
@@ -48,6 +55,14 @@ git sparse-checkout set slicing/cqrs-inventory
 
 ## Ruta de Aprendizaje Recomendada
 
+### Nivel 0: Test-Driven Development (Antes de empezar)
+
+0. **Aprende TDD primero** (`layered/tdd-kata`)
+   - El ciclo Red-Green-Refactor
+   - Test-first thinking
+   - 3 katas: FizzBuzz → String Calculator → Shopping Cart
+   - Patrón AAA y naming conventions
+
 ### Nivel 1: Fundamentos (Semana 1-2)
 
 1. **Empieza con repository-pattern** (`layered/repository-pattern`)
@@ -58,33 +73,45 @@ git sparse-checkout set slicing/cqrs-inventory
    - Añade la capa de servicio
    - Entiende la responsabilidad de cada capa
 
-3. **Avanza a library-system** (`hexagonal/library-system`)
+3. **Aprende error handling robusto** (`patterns/error-handling`)
+   - Patrón Result/Either
+   - Errores como valores (no excepciones)
+   - Validación en boundaries con Fail Fast
+   - Traducir errores de dominio a HTTP status codes
+
+4. **Domina filtrado inteligente** (`patterns/specification-pattern`)
+   - Specification Pattern
+   - Encapsular reglas de negocio reutilizables
+   - Composición con AND, OR, NOT
+   - Filtrado en memoria vs base de datos
+
+5. **Avanza a library-system** (`hexagonal/library-system`)
    - Puertos y adaptadores
    - Dominio independiente de infraestructura
    - Value Objects y Aggregate Roots
 
 ### Nivel 2: Organización (Semana 3)
 
-4. **Aprende Vertical Slicing** (`slicing/vertical-slicing-tasks`)
+6. **Aprende Vertical Slicing** (`slicing/vertical-slicing-tasks`)
    - Organización por features vs capas técnicas
    - Alta cohesión, bajo acoplamiento
    - Comunicación entre features
 
 ### Nivel 3: Patrones Avanzados (Semana 4-5)
 
-5. **Domina CQRS** (`slicing/cqrs-inventory`)
+7. **Domina CQRS** (`slicing/cqrs-inventory`)
    - Separar comandos de queries
    - Write Model vs Read Model
    - Repositorios separados
 
-6. **Aprende Event-Driven** (`ddd/event-driven-orders`)
+8. **Aprende Event-Driven** (`ddd/event-driven-orders`)
    - Domain Events
    - Event Bus y Event Handlers
    - Desacoplamiento mediante eventos
 
 ### Nivel 4: DDD (Semana 6+)
 
-7. **Bounded Contexts** (`ddd/bounded-contexts-ecommerce`)
+9. **Bounded Contexts** (`ddd/bounded-contexts-ecommerce`)
    - Múltiples contextos delimitados
    - Lenguaje ubicuo por contexto
    - Integration Events
@@ -125,10 +152,12 @@ Todos los proyectos usan:
 
 Cada proyecto incluye:
 
-- README con guía paso a paso
+- README_ES.md con tutorial completo y guía pedagógica integrada
+- QUICKSTART.md para empezar en 5 minutos
+- WELCOME.txt con bienvenida e instrucciones rápidas
+- PRESENTATION.md para presentar a otros desarrolladores
 - Código comentado explicando el "por qué"
 - Tests unitarios como ejemplos
-- Guías pedagógicas (en proyectos avanzados)
 
 ## Preguntas Frecuentes
 

@@ -520,13 +520,13 @@ No te dejes enredar, mi niño. Vertical slicing no siempre es la mejor opción:
 - Preparando para microservicios
 - Features cambian a diferentes ritmos
 
-## Próximos Pasos
+## Siguiente Paso
 
-Una vez domines vertical slicing, puedes explorar:
+Una vez domines vertical slicing, estás listo para:
 
-1. **[cqrs-example](../cqrs-example)** - Separar comandos de queries
-2. **[event-driven-example](../event-driven-example)** - Comunicación entre features vía eventos
-3. **[bounded-contexts-example](../bounded-contexts-example)** - Features que se convierten en bounded contexts
+→ **[Event-Driven Orders](../../ddd/event-driven-orders)** - Arquitectura dirigida por eventos con comunicación entre features vía eventos
+
+---
 
 ## Resumen Rápido
 
@@ -552,7 +552,7 @@ Recuerda, mi niño: **piensa en features, no en capas. Cada feature es una reban
 
 ## Proyectos Relacionados
 
-- **[library-system](../hexagonal)**: Enfoque de capas horizontales
-- **[cqrs-example](../cqrs-example)**: Patrón CQRS
-- **[event-driven-example](../event-driven-example)**: Arquitectura dirigida por eventos
-- **[bounded-contexts-example](../bounded-contexts-example)**: Múltiples bounded contexts
+- **[Library System](../../hexagonal/library-system)**: Arquitectura Hexagonal con capas horizontales
+- **[Event-Driven Orders](../../ddd/event-driven-orders)**: Arquitectura dirigida por eventos
+- **[Repository Pattern](../../layered/repository-pattern)**: Patrón Repository básico
+- **[Controller-Service](../../layered/controller-service)**: Controller y Service básicos

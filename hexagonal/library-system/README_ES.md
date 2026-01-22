@@ -490,25 +490,73 @@ Ahora que ya has visto cómo funciona, aquí tienes unos ejercicios pa' practica
    - Interfaz de línea de comandos
    - Usa los mismos casos de uso que el REST controller
 
+## Diagrama de Flujo Completo
+
+Este diagrama muestra cómo fluye una petición desde HTTP hasta la base de datos:
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│  POST /books { "isbn": "978-...", "title": "Clean Architecture", ... } │
+└──────────────────────────────────┬──────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│  CONTROLLER (Adaptador Primario)                                        │
+│  ├── Recibe HTTP Request                                                │
+│  ├── Crea RegisterBookCommand (DTO)                                     │
+│  └── Llama al UseCase                                                   │
+└──────────────────────────────────┬──────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│  USE CASE (Aplicación)                                                   │
+│  ├── Recibe Command (DTO primitivos)                                    │
+│  ├── Crea Value Objects: ISBN.create("978-...")                         │
+│  ├── Crea Entidad: Book.create({...})                                   │
+│  ├── Llama al Repository (INTERFACE)                                    │
+│  └── Retorna BookResponse (DTO)                                         │
+└──────────────────────────────────┬──────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│  REPOSITORY INTERFACE (Puerto en Dominio)                               │
+│  └── save(book: Book): Promise<void>                                    │
+└──────────────────────────────────┬──────────────────────────────────────┘
+                                   │
+                    ┌──────────────┴──────────────┐
+                    │           implements        │
+                    ▼                             ▼
+┌───────────────────────────────┐  ┌───────────────────────────────┐
+│  InMemoryBookRepository       │  │  PostgresBookRepository       │
+│  (Para testing/desarrollo)    │  │  (Para producción)            │
+│                               │  │                               │
+│  Map.set(id, book)            │  │  INSERT INTO books VALUES...  │
+└───────────────────────────────┘  └───────────────────────────────┘
+```
+
+### Inversión de Dependencias (La Clave)
+
+```
+SIN INVERSIÓN (mal)                CON INVERSIÓN (bien)
+──────────────────────             ──────────────────────
+
+UseCase                            UseCase
+    │                                  │
+    │ depende de ↓                     │ depende de ↓
+    ▼                                  ▼
+PostgresRepository                 BookRepository (INTERFACE)
+                                       ▲
+                                       │ implementa
+                                       │
+                                   PostgresRepository
+
+El dominio DEFINE qué necesita (interface)
+La infraestructura IMPLEMENTA cómo lo hace
+```
+
+---
+
 ## Recursos Adicionales
-
-### Documentación por Capas
-
-- [📖 Guía del Dominio](./src/domain/README.md) - Entidades, Value Objects y Servicios
-- [🎬 Guía de Aplicación](./src/application/README.md) - Casos de Uso y DTOs
-- [🔧 Guía de Infraestructura](./src/infrastructure/README.md) - Adaptadores y Persistencia
-
-### Guías Pedagógicas Completas
-
-- [🗄️ **Patrón Repository**](./docs/GUIA_REPOSITORY_PATTERN.md) - La guía definitiva sobre Repositories
-  - Qué es el patrón Repository y por qué existe
-  - Puerto vs Adaptador: La clave de la hexagonal
-  - DTOs vs Entidades de Dominio
-  - Mapping entre capas (HTTP → DTO → Entidad → BD)
-  - Implementaciones: InMemory, PostgreSQL, Fake
-  - Testing con repositories
-  - Errores comunes y cómo evitarlos
-  - Preguntas frecuentes
 
 ### Lecturas Recomendadas
 
@@ -541,15 +589,18 @@ Regla de oro: "¿Esta lógica existiría aunque cambiara la base de datos o el f
 - Si SÍ → va en el dominio
 - Si NO → va en infraestructura
 
-## Próximos Pasos
+## Siguiente Paso
 
-Una vez domines este proyecto, puedes pasar a los siguientes ejemplos:
+Una vez domines este proyecto, estás listo para:
 
-1. **[vertical-slicing-example](../vertical-slicing-example)** - Organización por features en lugar de capas
-2. **[cqrs-example](../cqrs-example)** - Separación de comandos y queries
-3. **[event-driven-example](../event-driven-example)** - Arquitectura dirigida por eventos
-4. **[bounded-contexts-example](../bounded-contexts-example)** - Múltiples contextos delimitados
+→ **[Vertical Slicing Tasks](../../slicing/vertical-slicing-tasks)** - Organización por features en lugar de capas
+
+### Otros proyectos avanzados
+
+- **[Event-Driven Orders](../../ddd/event-driven-orders)** - Arquitectura dirigida por eventos
+
+---
 
 Venga, mi niño, a darle caña que esto se aprende haciendo. Cualquier duda, revisa el código que está to' comentado pa' que lo entiendas bien.
 
-¡Que lo disfrutes! 🚀
+¡Que lo disfrutes!

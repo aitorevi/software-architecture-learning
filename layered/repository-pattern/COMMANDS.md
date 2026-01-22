@@ -177,12 +177,6 @@ cat QUICKSTART.md
 cat DIAGRAMA.md
 ```
 
-### Ver Métricas
-
-```bash
-cat METRICS.md
-```
-
 ## 🎓 Ejercicios
 
 ### Setup para Ejercicio 1 (Añadir findByTitle)
