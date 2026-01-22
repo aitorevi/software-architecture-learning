@@ -1,0 +1,111 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║         🚨 ERROR HANDLING & VALIDATION STRATEGY                      ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña a manejar errores como un
+profesional. Nada de exceptions por todos lados. Aquí aprenderás
+el patrón Result/Either que usan los pros.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 CÓDIGO FUENTE:
+
+  Léelo en este orden:
+
+  1. src/domain/Result.ts                      (la joya de la corona)
+  2. src/domain/errors/DomainErrors.ts         (errores de negocio)
+  3. src/domain/value-objects/Email.ts         (validación en VOs)
+  4. src/domain/value-objects/Password.ts      (más validación)
+  5. src/application/RegisterUserUseCase.ts    (Result en acción)
+  6. src/infrastructure/http/UserController.ts (traducir Result → HTTP)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Patrón Result/Either (errores como valores)
+  ✅ Error as Flow (no excepciones para casos de negocio)
+  ✅ Errores de dominio vs errores de infraestructura
+  ✅ Validation Object Pattern
+  ✅ Fail Fast en boundaries
+  ✅ Traducir errores a HTTP status codes
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "Los errores de NEGOCIO no son excepciones,
+      son parte del flujo normal del programa.
+      Solo las cosas INESPERADAS lanzan exception."
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  Si vienes de controller-service, este proyecto te va a volar la cabeza.
+  El manejo de errores es lo que separa el código amateur del profesional.
+
+  Tranqui papas, todo está explicadito paso a paso.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (45 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  TDD Kata
+        ↓
+  Repository Pattern
+        ↓
+  Controller-Service
+        ↓
+  Error Handling     ← ESTÁS AQUÍ
+        ↓
+  Library System (Hexagonal)
+        ↓
+  Vertical Slicing
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Este proyecto cambiará tu forma de pensar sobre los errores.
+Promise.
+
+-- El Profe Millo
+   "Un error bien manejado es mejor que un código perfecto
+    que explota en producción"
+
+═══════════════════════════════════════════════════════════════════════
