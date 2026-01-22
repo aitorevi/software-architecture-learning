@@ -1,0 +1,110 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║         📚 LIBRARY SYSTEM - ARQUITECTURA HEXAGONAL                   ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este es el proyecto más completo de arquitectura
+hexagonal. Aquí verás Value Objects, DTOs, Eventos de Dominio y más.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 CÓDIGO FUENTE:
+
+  Dominio (el corazón):
+  1. src/domain/entities/book.ts           (Aggregate Root)
+  2. src/domain/value-objects/isbn.ts      (Value Object)
+  3. src/domain/repositories/book.repository.ts  (Puerto)
+
+  Aplicación (casos de uso):
+  4. src/application/use-cases/register-book.use-case.ts
+  5. src/application/dtos/book.dto.ts      (DTOs)
+
+  Infraestructura (adaptadores):
+  6. src/infrastructure/persistence/      (Adaptadores de salida)
+  7. src/infrastructure/controllers/      (Adaptadores de entrada)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Arquitectura Hexagonal completa (Puertos y Adaptadores)
+  ✅ Value Objects (ISBN, BookId, Email)
+  ✅ Aggregate Roots (Book, User, Loan)
+  ✅ DTOs y Commands
+  ✅ Inversión de Dependencias
+  ✅ Múltiples adaptadores (InMemory, PostgreSQL)
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "El DOMINIO define los PUERTOS (interfaces)
+      La INFRAESTRUCTURA implementa los ADAPTADORES
+      Las dependencias SIEMPRE apuntan hacia el dominio"
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  Este proyecto es más complejo que controller-service.
+  Si algo no tiene sentido, vuelve a los proyectos anteriores.
+
+  La arquitectura hexagonal es la base de todo lo que viene después.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (45 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  Repository Pattern
+        ↓
+  Controller-Service
+        ↓
+  Library System (Hexagonal)  ← ESTÁS AQUÍ
+        ↓
+  Vertical Slicing
+        ↓
+  Event-Driven / CQRS
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Si tienes dudas, todo está explicado en README_ES.md
+
+-- El Profe Millo
+   "El dominio es el corazón. Todo lo demás son detalles."
+
+═══════════════════════════════════════════════════════════════════════

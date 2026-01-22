@@ -1,0 +1,112 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║          📨 EVENT-DRIVEN - ARQUITECTURA DIRIGIDA POR EVENTOS         ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña Event-Driven Architecture.
+Es como WhatsApp: cuando pasa algo, se publica un mensaje y quien esté
+interesado lo escucha y reacciona.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 CÓDIGO FUENTE:
+
+  Eventos de Dominio:
+  1. src/domain/events/DomainEvent.ts     (interface base)
+  2. src/domain/events/OrderEvents.ts     (eventos específicos)
+  3. src/domain/events/EventBus.ts        (puerto)
+
+  Aggregate que emite eventos:
+  4. src/domain/entities/Order.ts         (emite eventos al cambiar)
+
+  Handlers que reaccionan:
+  5. src/application/event-handlers/      (reaccionan a eventos)
+
+  Infraestructura:
+  6. src/infrastructure/event-bus/        (implementación del bus)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Eventos de Dominio (hechos que ocurrieron)
+  ✅ Event Bus (distribuye eventos)
+  ✅ Event Handlers (reaccionan a eventos)
+  ✅ Desacoplamiento total entre componentes
+  ✅ Extensibilidad sin modificar código existente
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "Los eventos son HECHOS que ocurrieron (pasado)
+      Los handlers REACCIONAN de forma independiente
+      El publicador NO conoce a los suscriptores"
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  Observa los logs cuando ejecutas la demo.
+  Verás cómo los eventos disparan múltiples handlers.
+
+  Añadir un nuevo handler = 0 cambios en código existente.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (45 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE COMPLETADA:
+
+  Repository Pattern (Básico)
+        ↓
+  Controller-Service (Básico)
+        ↓
+  Library System (Intermedio)
+        ↓
+  Vertical Slicing (Intermedio)
+        ↓
+  Event-Driven (Avanzado)  ← ¡ESTÁS AQUÍ! 🎉
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Si tienes dudas, todo está explicado en README_ES.md
+
+-- El Profe Millo
+   "Usa eventos para desacoplar y permitir que múltiples
+    cosas reaccionen a un hecho"
+
+═══════════════════════════════════════════════════════════════════════

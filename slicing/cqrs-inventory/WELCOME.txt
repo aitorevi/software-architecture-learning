@@ -1,0 +1,106 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║              📦 CQRS - SISTEMA DE INVENTARIO                         ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña CQRS (Command Query
+Responsibility Segregation). Es como tener dos puertas en una tienda:
+una para entrar (comandos) y otra para salir (queries).
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md (si existe) o README_ES.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 ESTRUCTURA CQRS:
+
+  WRITE SIDE (Comandos):              READ SIDE (Queries):
+
+  ┌─────────────────┐                 ┌─────────────────┐
+  │ AddProductCmd   │                 │ ListProductsQry │
+  │ UpdateStockCmd  │                 │ GetLowStockQry  │
+  └────────┬────────┘                 └────────┬────────┘
+           │                                    │
+           ▼                                    ▼
+  ┌─────────────────┐                 ┌─────────────────┐
+  │  Write Model    │                 │  Read Model     │
+  │  (Entidades)    │                 │  (DTOs livianos)│
+  └────────┬────────┘                 └────────┬────────┘
+           │                                    │
+           ▼                                    ▼
+  ┌─────────────────┐                 ┌─────────────────┐
+  │ Write Repository│  ──Eventos──▶  │ Read Repository │
+  └─────────────────┘                 └─────────────────┘
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Separación de lectura y escritura
+  ✅ Modelo de escritura (rico en lógica)
+  ✅ Modelo de lectura (optimizado para queries)
+  ✅ Sincronización vía eventos
+  ✅ Cuándo usar (y cuándo NO) CQRS
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "Escribir y leer son operaciones diferentes
+      Optimiza cada una por separado
+      No fuerces un modelo a hacer ambas cosas"
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  CQRS añade complejidad. Solo úsalo cuando:
+  - Las lecturas son muy diferentes a las escrituras
+  - Necesitas escalar lecturas y escrituras por separado
+  - Tienes queries complejas que el modelo de escritura no satisface
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  README_ES.md      → Tutorial completo
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 NIVEL AVANZADO:
+
+  Este es un patrón avanzado. Asegúrate de dominar:
+  - Arquitectura Hexagonal
+  - Event-Driven Architecture
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+-- El Profe Millo
+   "Separa lo que se lee de lo que se escribe"
+
+═══════════════════════════════════════════════════════════════════════

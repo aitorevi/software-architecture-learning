@@ -1,0 +1,104 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║           🎮 CONTROLLER-SERVICE - EJEMPLO BÁSICO                     ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña la separación entre
+Controller (maneja HTTP) y Service (orquesta el dominio).
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (30 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 CÓDIGO FUENTE:
+
+  Léelo en este orden:
+
+  1. src/domain/Task.ts                    (la entidad)
+  2. src/domain/TaskRepository.ts          (la interface)
+  3. src/infrastructure/persistence/       (la implementación)
+  4. src/application/TaskService.ts        (el SERVICE)
+  5. src/infrastructure/http/TaskController.ts  (el CONTROLLER)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Controller (adaptador HTTP → traduce peticiones)
+  ✅ Service (orquestador → coordina el dominio)
+  ✅ Separación de responsabilidades
+  ✅ El flujo HTTP → Controller → Service → Repository
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "El Controller conoce HTTP (Request, Response)
+      El Service NO conoce HTTP (solo dominio)
+      Cada uno hace UNA cosa bien"
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  Si vienes del proyecto repository-pattern, ya conoces la base.
+  Ahora añadimos la capa HTTP con Controller.
+
+  Si es tu primer proyecto, empieza por repository-pattern.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (30 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  Repository Pattern  ← Deberías conocer esto
+        ↓
+  Controller-Service  ← ESTÁS AQUÍ
+        ↓
+  Library System (Hexagonal)
+        ↓
+  Vertical Slicing
+        ↓
+  Event-Driven
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Si tienes dudas, todo está explicado en README_ES.md
+
+-- El Profe Millo
+   "Si entiendes HTTP → Controller → Service → Repository,
+    ya entiendes el 80% de las apps web modernas"
+
+═══════════════════════════════════════════════════════════════════════

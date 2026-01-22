@@ -1,0 +1,107 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║           🍕 VERTICAL SLICING - ORGANIZACIÓN POR FEATURES            ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña a organizar código por
+FEATURES en lugar de por capas técnicas. Como cortar una pizza en
+rebanadas verticales.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (30 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 ESTRUCTURA DEL CÓDIGO:
+
+  Tradicional (horizontal):        Vertical Slicing:
+
+  src/                             src/features/
+  ├── controllers/                 ├── projects/     ← Feature completa
+  ├── services/                    │   ├── domain/
+  ├── repositories/                │   ├── application/
+  └── models/                      │   └── infrastructure/
+                                   │
+  (código disperso)                ├── tasks/        ← Feature completa
+                                   └── tags/         ← Feature completa
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Organización por features (no por capas)
+  ✅ Cohesión de código relacionado
+  ✅ Independencia entre features
+  ✅ Preparación para microservicios
+  ✅ Referencias por ID entre features
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "Cada feature es una carpeta completa
+      Todo lo relacionado vive junto
+      Referencias entre features: solo por ID"
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  Piensa en features como "mini-aplicaciones".
+  Cada una puede existir independiente.
+  Si mañana quieres extraer una a microservicio, cortas y pegas.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (30 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  Repository Pattern
+        ↓
+  Controller-Service
+        ↓
+  Library System (Hexagonal)
+        ↓
+  Vertical Slicing  ← ESTÁS AQUÍ
+        ↓
+  Event-Driven / CQRS
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Si tienes dudas, todo está explicado en README_ES.md
+
+-- El Profe Millo
+   "Piensa en features, no en capas"
+
+═══════════════════════════════════════════════════════════════════════

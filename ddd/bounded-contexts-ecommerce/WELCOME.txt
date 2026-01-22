@@ -1,0 +1,103 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║         🛒 BOUNDED CONTEXTS - E-COMMERCE                             ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña Bounded Contexts, el
+concepto más importante de Domain-Driven Design. Es como tener barrios
+en una ciudad: cada uno con sus propias reglas y lenguaje.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md (si existe) o README_ES.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 ESTRUCTURA DE BOUNDED CONTEXTS:
+
+  src/
+  ├── catalog-context/     ← Catálogo de productos
+  │   └── Product: nombre, descripción, imágenes
+  │
+  ├── sales-context/       ← Ventas y pedidos
+  │   └── Product: precio, stock, descuentos
+  │
+  ├── shipping-context/    ← Envíos
+  │   └── Product: peso, dimensiones, fragilidad
+  │
+  └── shared/
+      └── integration-events/  ← Comunicación entre contextos
+
+  ¡Mismo concepto "Product", diferentes significados!
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Bounded Contexts (fronteras conceptuales)
+  ✅ Lenguaje Ubicuo por contexto
+  ✅ Modelos independientes
+  ✅ Integration Events (comunicación entre contextos)
+  ✅ Anti-Corruption Layer
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "Cada contexto tiene su propio modelo
+      La misma palabra puede significar cosas diferentes
+      Los contextos se comunican vía eventos, no compartiendo código"
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  Piensa en contextos como equipos independientes.
+  Cada equipo tiene su propia visión del negocio.
+  La comunicación es explícita, no implícita.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  README_ES.md      → Tutorial completo
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 NIVEL AVANZADO:
+
+  Este es un patrón avanzado de DDD. Asegúrate de dominar:
+  - Arquitectura Hexagonal
+  - Event-Driven Architecture
+  - Vertical Slicing
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+-- El Profe Millo
+   "Cada contexto es un mundo. Respeta sus fronteras."
+
+═══════════════════════════════════════════════════════════════════════
