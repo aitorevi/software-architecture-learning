@@ -1,0 +1,30 @@
+{
+  "name": "tdd-kata",
+  "version": "1.0.0",
+  "description": "TDD Kata - Red Green Refactor - Aprendiendo TDD paso a paso con el Profe Millo",
+  "main": "src/kata-1-fizzbuzz/fizzbuzz.ts",
+  "type": "module",
+  "scripts": {
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:watch": "node --import tsx --test --watch tests/*.test.ts",
+    "test:fizzbuzz": "node --import tsx --test src/kata-1-fizzbuzz/fizzbuzz.test.ts",
+    "test:string-calculator": "node --import tsx --test src/kata-2-string-calculator/string-calculator.test.ts",
+    "test:shopping-cart": "node --import tsx --test src/kata-3-shopping-cart/shopping-cart.test.ts"
+  },
+  "keywords": [
+    "tdd",
+    "test-driven-development",
+    "kata",
+    "red-green-refactor",
+    "architecture",
+    "learning",
+    "typescript"
+  ],
+  "author": "El Profe Millo",
+  "license": "MIT",
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.6"
+  }
+}

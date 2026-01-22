@@ -1,0 +1,114 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║            🎯 TDD KATA - RED GREEN REFACTOR                          ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Bienvenido/a al mundo del TDD (Test-Driven Development).
+Aquí vas a aprender a escribir código de calidad usando el ciclo mágico:
+
+    ❌ RED → ✅ GREEN → ♻️ REFACTOR
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm test             (ejecutar todos los tests)
+  3. npm run test:watch   (modo watch - los tests se ejecutan al guardar)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 LAS 3 KATAS (de fácil a difícil):
+
+  Léelas en este orden:
+
+  1. src/kata-1-fizzbuzz/           (El clásico - 15 min)
+     tests/fizzbuzz.test.ts
+
+  2. src/kata-2-string-calculator/  (Más complejo - 25 min)
+     tests/string-calculator.test.ts
+
+  3. src/kata-3-shopping-cart/      (Mundo real - 45 min)
+     tests/shopping-cart.test.ts
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ El ciclo TDD: Red → Green → Refactor
+  ✅ Test-first thinking (primero el test, luego el código)
+  ✅ AAA pattern (Arrange-Act-Assert)
+  ✅ Test naming conventions (tercera persona descriptiva)
+  ✅ Baby steps (pasos pequeños y seguros)
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO DEL TDD:
+
+     "Nunca escribas código de producción
+      sin antes tener un test que falle"
+
+      ❌ RED    → Escribe un test que falla
+      ✅ GREEN  → Escribe el código mínimo para que pase
+      ♻️ REFACTOR → Mejora el código manteniendo los tests verdes
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  El TDD no se aprende leyendo, se aprende HACIENDO.
+  No te saltes pasos. Haz cada kata completa.
+  Siente el ritmo: Red → Green → Refactor.
+
+  Es como bailar salsa: al principio parece lío,
+  pero cuando le pillas el ritmo, ya no paras.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (45 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  TDD Kata           ← ESTÁS AQUÍ (aprende a testear primero)
+        ↓
+  Repository Pattern (aplica TDD a arquitectura)
+        ↓
+  Controller-Service (TDD en APIs)
+        ↓
+  Library System (Hexagonal) (TDD + arquitectura avanzada)
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Recuerda: En TDD, los tests no son algo que añades al final.
+Son el PRINCIPIO. Son tu GPS. Son tu red de seguridad.
+
+-- El Profe Millo
+   "El mejor código no es el más listo,
+    es el que tiene los mejores tests"
+
+═══════════════════════════════════════════════════════════════════════
