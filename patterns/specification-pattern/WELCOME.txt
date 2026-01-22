@@ -1,0 +1,111 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║         🎯 SPECIFICATION PATTERN - FILTRADO INTELIGENTE              ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña el Specification Pattern,
+una técnica pro para encapsular lógica de negocio de filtrado sin
+repetir código ni liar queries por todos lados.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 CÓDIGO FUENTE:
+
+  Léelo en este orden:
+
+  1. src/domain/specifications/Specification.ts    (la base)
+  2. src/domain/specifications/ProductSpecs.ts     (especificaciones concretas)
+  3. src/domain/specifications/CompositeSpecs.ts   (AND, OR, NOT)
+  4. src/domain/entities/Product.ts                (la entidad)
+  5. src/application/SearchProductsUseCase.ts      (el caso de uso)
+  6. src/infrastructure/persistence/              (adaptadores)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Specification Pattern (encapsular reglas de negocio)
+  ✅ Composite Pattern (AND, OR, NOT)
+  ✅ Reutilización de especificaciones
+  ✅ Filtrado en memoria vs base de datos
+  ✅ Query Object Pattern
+  ✅ Testing de especificaciones aisladas
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "Una especificación es una regla de negocio reutilizable
+      que decide si un objeto cumple ciertos criterios.
+      Pequeñas piezas que se combinan para crear filtros complejos."
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  Este patrón brilla cuando tienes muchos filtros combinables.
+  Si solo tienes 2-3 filtros simples, puede ser overkill.
+  Pero si tienes lógica compleja de negocio para filtrar, esto
+  te va a salvar la vida.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (45 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  Repository Pattern
+        ↓
+  Controller-Service
+        ↓
+  Error Handling
+        ↓
+  Specification Pattern  ← ESTÁS AQUÍ
+        ↓
+  Library System (Hexagonal)
+        ↓
+  Vertical Slicing
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Este patrón te va a cambiar la forma de pensar sobre filtros
+y consultas complejas.
+
+-- El Profe Millo
+   "Las especificaciones son como bloques LEGO: pequeñas,
+    simples, pero se combinan para crear cosas complejas"
+
+═══════════════════════════════════════════════════════════════════════
