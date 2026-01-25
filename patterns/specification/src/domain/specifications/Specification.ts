@@ -1,65 +1,190 @@
 /**
- * Specification Pattern - Interface Base
+ * ═══════════════════════════════════════════════════════════════════════════
  *
- * Este es el corazón del patrón, mi niño.
- * Cada especificación encapsula UNA regla de negocio que puede responderse con un boolean.
+ *   📚 ARCHIVO 1 DE 6: SPECIFICATION PATTERN - LA BASE
  *
- * La magia está en que las especificaciones se pueden COMPONER usando AND, OR, NOT.
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * ¡Buenas, mi niño! Este es el CORAZÓN del Specification Pattern.
+ *
+ * 🎯 QUÉ ES UNA SPECIFICATION:
+ *
+ * Una especificación es simplemente una REGLA DE NEGOCIO encapsulada en un objeto
+ * que puede responder a una pregunta con boolean: ¿Este objeto cumple la regla?
+ *
+ * Ejemplo mental:
+ *   Regla: "El producto debe estar en stock"
+ *   Pregunta: ¿Este producto cumple la regla?
+ *   Respuesta: true o false
+ *
+ * 💡 LA MAGIA - COMPOSICIÓN:
+ *
+ * Las especificaciones se pueden COMBINAR usando operadores lógicos:
+ *   - AND: Ambas reglas deben cumplirse
+ *   - OR:  Al menos una regla debe cumplirse
+ *   - NOT: La regla NO debe cumplirse
+ *
+ * Ejemplo de composición:
+ *   const affordable = new PriceLessThan(100);
+ *   const inStock = new InStock();
+ *   const affordableAndInStock = affordable.and(inStock);
+ *
+ * 🔗 RELACIÓN CON EL README:
+ *
+ * Esto implementa lo explicado en README_ES.md líneas 194-217
+ * "La Interface Base: Specification<T>"
+ *
+ * 📖 PRÓXIMO PASO:
+ *
+ * Después de entender esta interface, ve a:
+ *   → ProductSpecs.ts (ver especificaciones CONCRETAS en acción)
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
  */
 
 export interface Specification<T> {
   /**
-   * ¿Este objeto cumple con la especificación?
-   * Esta es la pregunta fundamental.
+   * 🎯 EL MÉTODO MÁS IMPORTANTE
+   *
+   * ¿Este objeto candidato cumple con mi regla de negocio?
+   *
+   * @param candidate - El objeto a evaluar
+   * @returns true si cumple la especificación, false si no
+   *
+   * Ejemplo:
+   *   const inStock = new InStockSpecification();
+   *   inStock.isSatisfiedBy(product) // true si product.stock > 0
    */
   isSatisfiedBy(candidate: T): boolean;
 
   /**
-   * Combina esta especificación con otra usando lógica AND (ambas deben cumplirse)
+   * 🔗 COMBINAR CON AND (lógica &&)
+   *
+   * Crea una nueva especificación que solo se cumple si AMBAS se cumplen.
+   *
+   * @param other - La otra especificación
+   * @returns Una nueva especificación compuesta
+   *
+   * Ejemplo:
+   *   const cheap = new PriceLessThan(100);
+   *   const electronics = new Category('electronics');
+   *   const cheapElectronics = cheap.and(electronics);
+   *   // Solo productos que son baratos Y electrónicos
    */
   and(other: Specification<T>): Specification<T>;
 
   /**
-   * Combina esta especificación con otra usando lógica OR (al menos una debe cumplirse)
+   * 🔗 COMBINAR CON OR (lógica ||)
+   *
+   * Crea una nueva especificación que se cumple si AL MENOS UNA se cumple.
+   *
+   * @param other - La otra especificación
+   * @returns Una nueva especificación compuesta
+   *
+   * Ejemplo:
+   *   const electronics = new Category('electronics');
+   *   const furniture = new Category('furniture');
+   *   const electronicsOrFurniture = electronics.or(furniture);
+   *   // Productos que son electrónicos O muebles
    */
   or(other: Specification<T>): Specification<T>;
 
   /**
-   * Niega esta especificación (NOT)
+   * 🔄 NEGAR CON NOT (lógica !)
+   *
+   * Crea una nueva especificación que es la negación de esta.
+   *
+   * @returns Una nueva especificación negada
+   *
+   * Ejemplo:
+   *   const inStock = new InStock();
+   *   const outOfStock = inStock.not();
+   *   // Productos que NO están en stock
    */
   not(): Specification<T>;
 }
 
 /**
- * CompositeSpecification - Clase Base Abstracta
+ * ═══════════════════════════════════════════════════════════════════════════
  *
- * Implementa los métodos de composición (and, or, not) para que
- * las especificaciones concretas solo tengan que implementar isSatisfiedBy.
+ *   🧱 CLASE BASE ABSTRACTA: CompositeSpecification
  *
- * Esto sigue el principio DRY: no repetimos código de composición en cada especificación.
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * 🎯 PROPÓSITO:
+ *
+ * Esta clase base implementa los métodos de COMPOSICIÓN (and, or, not)
+ * para que las especificaciones concretas solo se preocupen de su lógica.
+ *
+ * 💡 PRINCIPIO DRY (Don't Repeat Yourself):
+ *
+ * Sin esta clase, CADA especificación concreta tendría que implementar
+ * and(), or(), not(). Eso sería repetir el mismo código 10 veces.
+ *
+ * Con esta clase base: implementamos una vez, heredamos siempre.
+ *
+ * 🏗️ ESTRUCTURA:
+ *
+ * ┌─────────────────────────────────────┐
+ * │  CompositeSpecification (abstracta) │
+ * │  - isSatisfiedBy() → abstracto      │
+ * │  - and() → implementado             │
+ * │  - or() → implementado              │
+ * │  - not() → implementado             │
+ * └─────────────────────────────────────┘
+ *            ↑
+ *            │ extiende
+ *            │
+ * ┌─────────────────────────┐
+ * │ InStockSpecification    │
+ * │ - solo implementa       │
+ * │   isSatisfiedBy()       │
+ * │ - hereda and/or/not     │
+ * └─────────────────────────┘
+ *
+ * 🔗 RELACIÓN CON EL README:
+ *
+ * Esto implementa README_ES.md líneas 219-240
+ * "Clase Base Abstracta: CompositeSpecification"
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
  */
 export abstract class CompositeSpecification<T> implements Specification<T> {
   /**
-   * Cada especificación concreta debe implementar su propia lógica
+   * 🎯 MÉTODO ABSTRACTO
+   *
+   * Cada especificación concreta DEBE implementar su propia lógica de negocio.
+   * Aquí es donde pones la regla específica.
+   *
+   * Ejemplo en InStockSpecification:
+   *   isSatisfiedBy(product: Product): boolean {
+   *     return product.stock > 0;
+   *   }
    */
   abstract isSatisfiedBy(candidate: T): boolean;
 
   /**
-   * Ya está implementado: crea una AndSpecification
+   * ✅ YA IMPLEMENTADO - No tienes que hacerlo en cada especificación
+   *
+   * Crea un AndSpecification que combina esta spec con otra.
    */
   and(other: Specification<T>): Specification<T> {
     return new AndSpecification(this, other);
   }
 
   /**
-   * Ya está implementado: crea una OrSpecification
+   * ✅ YA IMPLEMENTADO
+   *
+   * Crea un OrSpecification que combina esta spec con otra.
    */
   or(other: Specification<T>): Specification<T> {
     return new OrSpecification(this, other);
   }
 
   /**
-   * Ya está implementado: crea una NotSpecification
+   * ✅ YA IMPLEMENTADO
+   *
+   * Crea un NotSpecification que niega esta spec.
    */
   not(): Specification<T> {
     return new NotSpecification(this);
@@ -67,9 +192,56 @@ export abstract class CompositeSpecification<T> implements Specification<T> {
 }
 
 /**
- * AndSpecification - Composición con lógica AND
+ * ═══════════════════════════════════════════════════════════════════════════
  *
- * Combina dos especificaciones: AMBAS deben cumplirse
+ *   🔗 ESPECIFICACIONES COMPUESTAS - El Patrón Composite en Acción
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * Estas tres clases implementan el COMPOSITE PATTERN.
+ * Permiten combinar especificaciones simples en especificaciones complejas.
+ *
+ * 💡 CONCEPTO CLAVE - RECURSIVIDAD:
+ *
+ * Estas clases reciben Specification<T> y devuelven Specification<T>.
+ * Esto permite anidar combinaciones infinitamente:
+ *
+ *   const complex = spec1.and(spec2).or(spec3).and(spec4.not());
+ *
+ * 🎯 EJEMPLO MENTAL:
+ *
+ *   Filtro simple: "precio < 100"
+ *   Filtro simple: "en stock"
+ *   Filtro compuesto: "precio < 100 AND en stock"
+ *
+ * 🔗 RELACIÓN CON EL README:
+ *
+ * Esto implementa README_ES.md líneas 242-287
+ * "Especificaciones Compuestas (Composite Pattern)"
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/**
+ * 🔗 AndSpecification - Combinar con AND (&&)
+ *
+ * AMBAS especificaciones deben cumplirse para que el candidato sea válido.
+ *
+ * 📊 Tabla de verdad:
+ *   left | right | resultado
+ *   -----|-------|----------
+ *   true | true  | true ✅
+ *   true | false | false ❌
+ *   false| true  | false ❌
+ *   false| false | false ❌
+ *
+ * 💡 EJEMPLO DE USO:
+ *
+ *   const cheap = new PriceLessThan(100);
+ *   const inStock = new InStock();
+ *   const affordableInStock = cheap.and(inStock);
+ *
+ *   // Solo productos que son baratos Y tienen stock
  */
 class AndSpecification<T> extends CompositeSpecification<T> {
   constructor(
@@ -80,15 +252,32 @@ class AndSpecification<T> extends CompositeSpecification<T> {
   }
 
   isSatisfiedBy(candidate: T): boolean {
+    // Evalúa ambas especificaciones
     return this.left.isSatisfiedBy(candidate)
         && this.right.isSatisfiedBy(candidate);
   }
 }
 
 /**
- * OrSpecification - Composición con lógica OR
+ * 🔗 OrSpecification - Combinar con OR (||)
  *
- * Combina dos especificaciones: AL MENOS UNA debe cumplirse
+ * AL MENOS UNA especificación debe cumplirse para que el candidato sea válido.
+ *
+ * 📊 Tabla de verdad:
+ *   left | right | resultado
+ *   -----|-------|----------
+ *   true | true  | true ✅
+ *   true | false | true ✅
+ *   false| true  | true ✅
+ *   false| false | false ❌
+ *
+ * 💡 EJEMPLO DE USO:
+ *
+ *   const electronics = new Category('electronics');
+ *   const furniture = new Category('furniture');
+ *   const electronicsOrFurniture = electronics.or(furniture);
+ *
+ *   // Productos que son electrónicos O muebles
  */
 class OrSpecification<T> extends CompositeSpecification<T> {
   constructor(
@@ -99,15 +288,34 @@ class OrSpecification<T> extends CompositeSpecification<T> {
   }
 
   isSatisfiedBy(candidate: T): boolean {
+    // Evalúa ambas, con que una sea true, el resultado es true
     return this.left.isSatisfiedBy(candidate)
         || this.right.isSatisfiedBy(candidate);
   }
 }
 
 /**
- * NotSpecification - Composición con lógica NOT
+ * 🔄 NotSpecification - Negar con NOT (!)
  *
- * Niega una especificación: debe NO cumplirse
+ * La especificación debe NO cumplirse para que el candidato sea válido.
+ *
+ * 📊 Tabla de verdad:
+ *   spec  | resultado
+ *   ------|----------
+ *   true  | false ❌
+ *   false | true ✅
+ *
+ * 💡 EJEMPLO DE USO:
+ *
+ *   const cheap = new PriceLessThan(100);
+ *   const expensive = cheap.not();
+ *
+ *   // Productos que NO son baratos (precio >= 100)
+ *
+ * 🎯 CASO DE USO REAL:
+ *
+ *   const premium = new PriceLessThan(1000).not();
+ *   // Productos premium (precio >= 1000)
  */
 class NotSpecification<T> extends CompositeSpecification<T> {
   constructor(private readonly spec: Specification<T>) {
@@ -115,6 +323,7 @@ class NotSpecification<T> extends CompositeSpecification<T> {
   }
 
   isSatisfiedBy(candidate: T): boolean {
+    // Niega el resultado de la especificación interna
     return !this.spec.isSatisfiedBy(candidate);
   }
 }

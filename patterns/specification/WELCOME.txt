@@ -36,14 +36,25 @@ repetir código ni liar queries por todos lados.
 
 💻 CÓDIGO FUENTE:
 
-  Léelo en este orden:
+  Léelo en este orden (cada archivo tiene explicaciones integradas):
 
-  1. src/domain/specifications/Specification.ts    (la base)
-  2. src/domain/specifications/ProductSpecs.ts     (especificaciones concretas)
-  3. src/domain/specifications/CompositeSpecs.ts   (AND, OR, NOT)
-  4. src/domain/entities/Product.ts                (la entidad)
-  5. src/application/SearchProductsUseCase.ts      (el caso de uso)
-  6. src/infrastructure/persistence/              (adaptadores)
+  📚 ARCHIVO 1/6: src/domain/specifications/Specification.ts
+     → La base del patrón (interface, CompositeSpecification, AND/OR/NOT)
+
+  📚 ARCHIVO 2/6: src/domain/specifications/ProductSpecs.ts
+     → Especificaciones concretas (InStock, PriceLessThan, Category...)
+
+  📚 ARCHIVO 3/6: src/domain/entities/Product.ts
+     → La entidad sobre la que se aplican las especificaciones
+
+  📚 ARCHIVO 4/6: src/application/use-cases/SearchProductsUseCase.ts
+     → Construcción dinámica de especificaciones
+
+  📚 ARCHIVO 5/6: src/infrastructure/persistence/InMemoryProductRepository.ts
+     → Ejecución de especificaciones (filtrado)
+
+  📚 ARCHIVO 6/6: src/infrastructure/http/ProductController.ts
+     → Punto de entrada HTTP (cierra el círculo)
 
 ═══════════════════════════════════════════════════════════════════════
 

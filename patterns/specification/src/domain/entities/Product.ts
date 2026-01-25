@@ -1,8 +1,47 @@
 /**
- * Product - Entidad de Dominio
+ * ═══════════════════════════════════════════════════════════════════════════
  *
- * Representa un producto en nuestro catálogo.
- * Esta es la entidad sobre la que aplicaremos las especificaciones.
+ *   📚 ARCHIVO 3 DE 6: LA ENTIDAD PRODUCT
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * ¡Buenas, mi niño! Este es el objeto sobre el que aplicamos las especificaciones.
+ *
+ * 🎯 QUÉ ES UNA ENTIDAD:
+ *
+ * Una entidad es un objeto de dominio con identidad única (id).
+ * Tiene datos (propiedades) y comportamiento (métodos).
+ *
+ * 💡 RELACIÓN CON SPECIFICATIONS:
+ *
+ * Las especificaciones EXAMINAN esta entidad para decidir si cumple reglas:
+ *
+ *   Specification<Product> → recibe un Product → devuelve boolean
+ *
+ * 🏗️ ESTRUCTURA:
+ *
+ * ┌──────────────────────────┐
+ * │       Product            │
+ * │  - id (readonly)         │ ← Identidad única
+ * │  - name                  │ ← NameContainsSpecification
+ * │  - price                 │ ← PriceLessThanSpecification
+ * │  - category              │ ← CategorySpecification
+ * │  - stock                 │ ← InStockSpecification
+ * │  - tags                  │ ← HasTagSpecification
+ * └──────────────────────────┘
+ *
+ * 🔒 ENCAPSULACIÓN:
+ *
+ * Las propiedades son privadas (_name, _price, etc.)
+ * Se accede a través de getters públicos (name, price, etc.)
+ * Esto protege la integridad de los datos.
+ *
+ * 📖 PRÓXIMO PASO:
+ *
+ * Después de ver la entidad, ve a:
+ *   → SearchProductsUseCase.ts (ver cómo se USAN las especificaciones)
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
  */
 
 export interface ProductProps {
@@ -28,10 +67,22 @@ export class Product {
     this._price = props.price;
     this._category = props.category;
     this._stock = props.stock;
-    this._tags = [...props.tags];
+    this._tags = [...props.tags]; // Copia defensiva
   }
 
-  // Getters
+  /**
+   * ═══════════════════════════════════════════════════════════════════════
+   * 📖 GETTERS - Acceso Controlado a las Propiedades
+   * ═══════════════════════════════════════════════════════════════════════
+   *
+   * Los getters permiten acceso de solo lectura a las propiedades privadas.
+   * Las especificaciones usan estos getters para evaluar reglas:
+   *
+   *   product.price → PriceLessThanSpecification lo usa
+   *   product.stock → InStockSpecification lo usa
+   *   product.category → CategorySpecification lo usa
+   */
+
   get id(): string {
     return this._id;
   }
@@ -53,10 +104,26 @@ export class Product {
   }
 
   get tags(): string[] {
+    // Devuelve una copia para evitar mutaciones externas
     return [...this._tags];
   }
 
-  // Métodos de negocio
+  /**
+   * ═══════════════════════════════════════════════════════════════════════
+   * 🎯 MÉTODOS DE NEGOCIO (Opcional)
+   * ═══════════════════════════════════════════════════════════════════════
+   *
+   * Estos métodos encapsulan lógica de negocio dentro de la entidad.
+   *
+   * 💡 NOTA: Podrías usar estos métodos dentro de especificaciones:
+   *
+   *   isSatisfiedBy(product: Product): boolean {
+   *     return product.isInStock(); // En vez de product.stock > 0
+   *   }
+   *
+   * Ambos enfoques son válidos. Usa el que prefieras según tu dominio.
+   */
+
   isInStock(): boolean {
     return this._stock > 0;
   }
@@ -65,7 +132,24 @@ export class Product {
     return this._tags.some(t => t.toLowerCase() === tag.toLowerCase());
   }
 
-  // Factory method
+  /**
+   * ═══════════════════════════════════════════════════════════════════════
+   * 🏭 FACTORY METHOD - Crear productos sin gestionar IDs
+   * ═══════════════════════════════════════════════════════════════════════
+   *
+   * Este método estático facilita la creación de productos.
+   * El ID se genera automáticamente.
+   *
+   * 📝 EJEMPLO DE USO:
+   *
+   *   const product = Product.create({
+   *     name: 'Laptop',
+   *     price: 999,
+   *     category: 'electronics',
+   *     stock: 10,
+   *     tags: ['new', 'featured']
+   *   });
+   */
   static create(props: Omit<ProductProps, 'id'>): Product {
     return new Product({
       ...props,
