@@ -11,6 +11,9 @@ software-architecture-learning/
 │   ├── repository-pattern/           # Patrón repositorio básico
 │   └── controller-service/           # Controller-Service-Repository
 ├── patterns/                         # Patrones Fundamentales
+│   ├── singleton/                    # Singleton Pattern (Lazy, Eager, Thread-Safe)
+│   ├── strategy/                     # Strategy Pattern (múltiples algoritmos intercambiables)
+│   ├── factory-method/               # Factory Method Pattern (creación de objetos)
 │   ├── error-handling/               # Error Handling con Result/Either Pattern
 │   └── specification-pattern/        # Specification Pattern para filtrado inteligente
 ├── hexagonal/                        # Arquitectura Hexagonal
@@ -31,6 +34,9 @@ software-architecture-learning/
 | Principiante | [tdd-kata](./layered/tdd-kata) | TDD | Aprende TDD con 3 katas progresivas (FizzBuzz, String Calculator, Shopping Cart) |
 | Principiante | [repository-pattern](./layered/repository-pattern) | Capas | Introducción al patrón repositorio |
 | Principiante | [controller-service](./layered/controller-service) | Capas | Estructura Controller-Service-Repository |
+| Principiante | [singleton](./patterns/singleton) | Singleton | Una única instancia global (Logger, DatabaseConnection, Config) |
+| Intermedio | [strategy](./patterns/strategy) | Strategy | Algoritmos intercambiables (estrategias de pago) |
+| Intermedio | [factory-method](./patterns/factory-method) | Factory Method | Creación de objetos mediante factories (exportadores de documentos) |
 | Intermedio | [error-handling](./patterns/error-handling) | Result/Either | Manejo de errores funcional con el patrón Result |
 | Intermedio | [specification-pattern](./patterns/specification-pattern) | Specification | Encapsular reglas de negocio de filtrado en objetos componibles |
 | Intermedio | [library-system](./hexagonal/library-system) | Hexagonal | Arquitectura hexagonal completa con puertos y adaptadores |
