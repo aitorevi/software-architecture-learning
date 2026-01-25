@@ -1,0 +1,118 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║      💰 DOMAIN VS APPLICATION SERVICES - LA DIFERENCIA CLAVE         ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña una de las distinciones
+más importantes en arquitectura: Domain Services vs Application Services.
+
+Un lío que casi todo el mundo tiene al principio, pero que cuando lo
+pillas clarito, tu código sube varios niveles.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 CÓDIGO FUENTE:
+
+  Léelo en este orden:
+
+  ANTES (todo mezclado):
+  1. src/before/TransferMoneyUseCase.ts        (el desastre)
+
+  DESPUÉS (separado):
+  2. src/domain/services/MoneyTransferService.ts   (Domain Service)
+  3. src/application/use-cases/TransferMoneyUseCase.ts  (Application Service)
+  4. src/domain/entities/Account.ts            (la entidad)
+  5. src/domain/value-objects/Money.ts         (Value Object)
+  6. tests/                                    (tests que demuestran todo)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Domain Service: Lógica de negocio pura sin I/O
+  ✅ Application Service: Orquestación con I/O y transacciones
+  ✅ Testing sin mocks (Domain Service)
+  ✅ Testing con mocks (Application Service)
+  ✅ Inversión de dependencias aplicada
+  ✅ Comparación ANTES vs DESPUÉS
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "Domain Service = Lógica de negocio entre múltiples entidades
+      Application Service = Orquestación de la operación completa
+
+      Si tiene I/O (repos, APIs, eventos) -> Application Service
+      Si es lógica pura sin I/O -> Domain Service"
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  La clave está en el testing:
+  - Domain Service se testea sin mocks (lógica pura)
+  - Application Service necesita mocks (tiene I/O)
+
+  Si necesitas mocks para testear lógica de negocio, algo está mal.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (45 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  Repository Pattern
+        ↓
+  Controller-Service
+        ↓
+  Library System (Hexagonal)
+        ↓
+  Domain vs Application Services  ← ESTÁS AQUÍ
+        ↓
+  Vertical Slicing
+        ↓
+  Event-Driven / CQRS
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Esta distinción es fundamental para escribir código limpio y testeable.
+Una vez que la entiendas, nunca más tendrás dudas de dónde poner qué.
+
+-- El Profe Millo
+   "Si necesitas mocks para testear negocio, revisa tu diseño"
+
+═══════════════════════════════════════════════════════════════════════
