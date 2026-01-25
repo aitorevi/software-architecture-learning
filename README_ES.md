@@ -38,7 +38,7 @@ software-architecture-learning/
 | Intermedio | [strategy](./patterns/strategy) | Strategy | Algoritmos intercambiables (estrategias de pago) |
 | Intermedio | [factory-method](./patterns/factory-method) | Factory Method | Creación de objetos mediante factories (exportadores de documentos) |
 | Intermedio | [error-handling](./patterns/error-handling) | Result/Either | Manejo de errores funcional con el patrón Result |
-| Intermedio | [specification-pattern](./patterns/specification-pattern) | Specification | Encapsular reglas de negocio de filtrado en objetos componibles |
+| Intermedio | [specification-pattern](patterns/specification) | Specification | Encapsular reglas de negocio de filtrado en objetos componibles |
 | Intermedio | [library-system](./hexagonal/library-system) | Hexagonal | Arquitectura hexagonal completa con puertos y adaptadores |
 | Intermedio | [domain-vs-application-services](./hexagonal/domain-vs-application-services) | Services | Domain Services (lógica pura) vs Application Services (orquestación) |
 | Intermedio | [vertical-slicing-tasks](./slicing/vertical-slicing-tasks) | Vertical Slicing | Organización del código por features |
