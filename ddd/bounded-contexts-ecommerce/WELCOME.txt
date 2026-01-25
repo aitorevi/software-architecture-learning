@@ -53,6 +53,30 @@ en una ciudad: cada uno con sus propias reglas y lenguaje.
 
 ═══════════════════════════════════════════════════════════════════════
 
+📖 ORDEN DE LECTURA DEL CÓDIGO:
+
+  Léelo en este orden (cada archivo tiene explicaciones integradas):
+
+  📚 ARCHIVO 1/6: src/catalog-context/domain/Product.ts
+     → Entender qué es un Bounded Context con un ejemplo simple
+
+  📚 ARCHIVO 2/6: src/sales-context/domain/Order.ts
+     → Ver cómo el mismo concepto cambia entre contextos
+
+  📚 ARCHIVO 3/6: src/shared/events/IntegrationEvent.ts
+     → Comunicación ENTRE contextos (la magia)
+
+  📚 ARCHIVO 4/6: src/shared/events/SalesEvents.ts
+     → Eventos concretos que un contexto publica
+
+  📚 ARCHIVO 5/6: src/shipping-context/application/CreateShipmentOnOrderPlacedHandler.ts
+     → Cómo un contexto REACCIONA a eventos de otro
+
+  📚 ARCHIVO 6/6: src/sales-context/application/PlaceOrderUseCase.ts
+     → El flujo completo: crear orden + publicar evento
+
+═══════════════════════════════════════════════════════════════════════
+
 🎯 QUÉ VAS A APRENDER:
 
   ✅ Bounded Contexts (fronteras conceptuales)
