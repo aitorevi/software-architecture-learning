@@ -542,23 +542,28 @@ class TransferMoneyUseCase { // Application Service
 
 ## 📋 Plan de Implementación Sugerido
 
-### Sprint 1-2 (2 semanas)
+### Sprint 1-2 (2 semanas) - ✅ COMPLETADO
 1. ✅ **TDD Kata** - Base metodológica (CRÍTICO)
 2. ✅ **Specification Pattern** - Patrón muy solicitado
 
-### Sprint 3-4 (2 semanas)
-3. ✅ **Unit of Work** - Transaccionalidad (GAP crítico)
-4. ✅ **Error Handling** - Robustez en toda colección
+### Sprint 3-4 (2 semanas) - ✅ COMPLETADO
+3. ✅ **Error Handling** - Robustez en toda colección
+4. ✅ **Domain vs Application Services** - Clarifica confusión
 
-### Sprint 5-6 (2 semanas)
-5. ✅ **Anti-Corruption Layer** - Completa Bounded Contexts
-6. ✅ **Outbox Pattern** - Eventos production-ready
+### Sprint Extra - Patrones GoF - ✅ COMPLETADO
+5. ✅ **Singleton Pattern** - Instancia única global
+6. ✅ **Strategy Pattern** - Algoritmos intercambiables
+7. ✅ **Factory Method Pattern** - Creación de objetos
 
-### Sprint 7 (1 semana)
-7. ✅ **Domain vs Application Services** - Clarifica confusión
+### Sprint 5-6 (2 semanas) - 📋 PENDIENTE
+8. 📋 **Unit of Work** - Transaccionalidad (GAP crítico)
+9. 📋 **Anti-Corruption Layer** - Completa Bounded Contexts
+
+### Sprint 7 (1 semana) - 📋 PENDIENTE
+10. 📋 **Outbox Pattern** - Eventos production-ready
 
 ### Futuro (Opcionales)
-8-10. Mediator-CQRS, Event Sourcing, Saga (según demanda)
+11-13. Mediator-CQRS, Event Sourcing, Saga (según demanda)
 
 ---
 
@@ -641,6 +646,8 @@ class TransferMoneyUseCase { // Application Service
 ## 🚀 Estado de Implementación
 
 ### ✅ Completados
+
+**Patrones Arquitectónicos:**
 1. **TDD Kata - Red Green Refactor** (2026-01-22)
    - Ubicación: `layered/tdd-kata/`
    - 52 tests pasando
@@ -653,18 +660,49 @@ class TransferMoneyUseCase { // Application Service
    - Value Objects con validación
    - Caso de uso: Sistema de registro de usuarios
 
+3. **Specification Pattern** (2026-01-22)
+   - Ubicación: `patterns/specification-pattern/`
+   - 30 tests pasando
+   - 8 especificaciones reutilizables
+   - Composición con AND/OR/NOT
+   - Caso de uso: Sistema de e-commerce con filtros
+
+4. **Domain vs Application Services** (2026-01-25)
+   - Ubicación: `hexagonal/domain-vs-application-services/`
+   - 26 tests pasando
+   - Domain Service puro (sin I/O)
+   - Application Service (orquestación)
+   - Caso de uso: Sistema bancario con transferencias
+
+**Patrones de Diseño GoF:**
+5. **Singleton Pattern** (2026-01-25)
+   - Ubicación: `patterns/singleton/`
+   - 48 tests pasando
+   - 3 variantes: Lazy, Eager, Thread-Safe
+   - Casos de uso: Logger, DatabaseConnection, ConfigManager
+
+6. **Strategy Pattern** (2026-01-25)
+   - Ubicación: `patterns/strategy/`
+   - 35 tests pasando
+   - 4 estrategias de pago: CreditCard, PayPal, Crypto, BankTransfer
+   - Caso de uso: Sistema de procesamiento de pagos
+
+7. **Factory Method Pattern** (2026-01-25)
+   - Ubicación: `patterns/factory-method/`
+   - 56 tests pasando
+   - 3 exportadores: PDF, Excel, CSV
+   - Caso de uso: Sistema de generación de reportes
+
 ### 🚧 En Progreso
 _Ninguno aún_
 
-### 📋 Pendientes
-1. Specification Pattern
-2. Unit of Work - Transacciones
-3. Anti-Corruption Layer (ACL) Explícito
-4. Outbox Pattern - Eventos Confiables
-5. Domain vs Application Services
-6. Mediator + CQRS (Opcional)
-7. Event Sourcing (Opcional)
-8. Saga Pattern (Opcional)
+### 📋 Pendientes (Patrones Arquitectónicos Avanzados)
+1. Unit of Work - Transacciones
+2. Anti-Corruption Layer (ACL) Explícito
+3. Outbox Pattern - Eventos Confiables
+4. Mediator + CQRS (Opcional)
+5. Event Sourcing (Opcional)
+6. Saga Pattern (Opcional)
 
 ---
 
@@ -679,7 +717,7 @@ _Ninguno aún_
 ---
 
 _Documento creado: 2026-01-22_
-_Última actualización: 2026-01-22_
+_Última actualización: 2026-01-25_
 
 ---
 
@@ -687,10 +725,21 @@ _Última actualización: 2026-01-22_
 
 | Estado | Cantidad |
 |--------|----------|
-| ✅ Completados | 2/10 |
-| 🚧 En Progreso | 0/10 |
-| 📋 Pendientes | 8/10 |
+| ✅ Completados | 7/13 |
+| 🚧 En Progreso | 0/13 |
+| 📋 Pendientes | 6/13 |
 
-**Progreso: 20%** ████░░░░░░░░░░░░░░░░
+**Progreso: 54%** ███████████░░░░░░░░░
 
-_Dos proyectos completados: TDD Kata (52 tests) y Error Handling (104 tests). El manejo de errores con Result/Either está funcionando perfectamente._
+**Patrones Arquitectónicos completados (4):**
+- TDD Kata (52 tests)
+- Error Handling (104 tests)
+- Specification Pattern (30 tests)
+- Domain vs Application Services (26 tests)
+
+**Patrones de Diseño GoF completados (3):**
+- Singleton Pattern (48 tests)
+- Strategy Pattern (35 tests)
+- Factory Method Pattern (56 tests)
+
+**Total: 351 tests pasando** ✅
