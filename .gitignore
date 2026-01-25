@@ -30,3 +30,6 @@ coverage/
 
 # Claude AI
 .claude/
+
+# Articles (local only)
+articles/
