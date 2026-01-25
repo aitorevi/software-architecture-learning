@@ -1,0 +1,118 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║         🎯 SINGLETON PATTERN - UNA SOLA INSTANCIA                    ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña el Singleton Pattern,
+uno de los patrones más famosos (y a veces mal usado) del mundo del
+desarrollo. Aprenderás cuándo usarlo, cuándo NO usarlo, y cómo
+implementarlo correctamente.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 CÓDIGO FUENTE:
+
+  Léelo en este orden:
+
+  1. src/infrastructure/singleton/problem/           (el problema)
+  2. src/infrastructure/singleton/solution/          (la solución)
+  3. src/infrastructure/singleton/Logger.ts          (ejemplo 1: Logger)
+  4. src/infrastructure/singleton/DatabaseConnection.ts  (ejemplo 2: DB)
+  5. src/application/use-cases/                      (casos de uso)
+  6. tests/unit/singleton/                           (tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Singleton Pattern (garantizar una única instancia)
+  ✅ Eager vs Lazy initialization
+  ✅ Thread-safety en TypeScript
+  ✅ Cuándo usar Singleton (y cuándo NO)
+  ✅ Alternativas modernas (DI, módulos ES6)
+  ✅ Testing de Singletons
+  ✅ Anti-patrones comunes
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "El Singleton garantiza que una clase tenga UNA SOLA instancia
+      global y proporciona un punto de acceso único a ella.
+      Pero ojo, no abuses: los Singletons pueden ser el 'goto'
+      de la programación orientada a objetos."
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  El Singleton es fácil de implementar pero fácil de abusar.
+  Úsalo solo cuando realmente necesites una instancia global:
+  - Logger
+  - Configuración de app
+  - Pool de conexiones
+  - Cache manager
+
+  Para todo lo demás, considera Dependency Injection.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (45 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  Repository Pattern
+        ↓
+  Controller-Service
+        ↓
+  Error Handling
+        ↓
+  Specification Pattern
+        ↓
+  Singleton Pattern  ← ESTÁS AQUÍ
+        ↓
+  Library System (Hexagonal)
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Este patrón es simple pero tiene sus trucos. Te voy a enseñar
+cómo implementarlo bien y, más importante, cuándo NO usarlo.
+
+-- El Profe Millo
+   "Un Singleton bien usado es elegante.
+    Cien Singletons son un desastre global."
+
+═══════════════════════════════════════════════════════════════════════

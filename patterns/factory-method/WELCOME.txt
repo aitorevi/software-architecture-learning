@@ -1,0 +1,115 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║         🏭 FACTORY METHOD PATTERN - CREACIÓN FLEXIBLE                ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña el Factory Method Pattern,
+uno de los patrones creacionales más útiles. Aprenderás a delegar la
+creación de objetos a subclases para desacoplar tu código y hacerlo
+más flexible.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 CÓDIGO FUENTE:
+
+  Léelo en este orden:
+
+  1. src/domain/exporters/DocumentExporter.ts       (la interface)
+  2. src/domain/exporters/PdfExporter.ts            (exportador PDF)
+  3. src/domain/exporters/ExcelExporter.ts          (exportador Excel)
+  4. src/domain/exporters/CsvExporter.ts            (exportador CSV)
+  5. src/domain/factories/ExporterFactory.ts        (el factory method)
+  6. src/application/ExportReportUseCase.ts         (el caso de uso)
+  7. src/infrastructure/exporters/                  (implementaciones)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Factory Method Pattern (creación delegada)
+  ✅ Desacoplamiento de la creación de objetos
+  ✅ Polimorfismo en acción
+  ✅ Extensibilidad sin modificar código
+  ✅ Strategy Pattern (bonus)
+  ✅ Testing de creación de objetos
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "No uses 'new' directamente si la creación puede cambiar.
+      Delega la creación a un método factory que las subclases
+      pueden sobreescribir."
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO:
+
+  Factory Method brilla cuando tienes familias de objetos relacionados
+  que se crean de formas similares pero con variaciones. Si solo tienes
+  un objeto, no lo necesitas. Pero si empiezan a aparecer variantes,
+  este patrón te va a salvar de un acoplamiento horrible.
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 ARCHIVOS ÚTILES:
+
+  WELCOME.txt       → Esta intro
+  QUICKSTART.md     → Empezar rápido (5 min)
+  README_ES.md      → Tutorial completo (45 min)
+  PRESENTATION.md   → Para presentar a otros
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  Repository Pattern
+        ↓
+  Controller-Service
+        ↓
+  Error Handling
+        ↓
+  Specification Pattern
+        ↓
+  Factory Method Pattern  ← ESTÁS AQUÍ
+        ↓
+  Library System (Hexagonal)
+        ↓
+  Vertical Slicing
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+Este patrón te va a enseñar que la creación de objetos puede ser
+tan importante como los objetos mismos.
+
+-- El Profe Millo
+   "No hagas 'new' de todo. Delega la creación y desacopla tu código."
+
+═══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,174 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║         🎯 STRATEGY PATTERN - ALGORITMOS INTERCAMBIABLES             ║
+║                                                                      ║
+║                      by El Profe Millo 🏝️                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+¡Buenas, mi niño/a! Este proyecto te enseña el Strategy Pattern,
+uno de los patrones más útiles y elegantes del catálogo de Gang of Four.
+Te permite encapsular algoritmos en objetos intercambiables.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 EMPEZAR EN 3 PASOS:
+
+  1. npm install          (instalar dependencias)
+  2. npm run dev          (servidor en localhost:3000)
+  3. npm test             (ejecutar tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTACIÓN:
+
+  ⚡ Tengo prisa (5 min)
+     → Abre: QUICKSTART.md
+
+  📚 Quiero aprender bien (45 min)
+     → Abre: README_ES.md
+
+  🎤 Quiero presentar esto
+     → Abre: PRESENTATION.md
+
+═══════════════════════════════════════════════════════════════════════
+
+💻 CÓDIGO FUENTE:
+
+  Léelo en este orden:
+
+  1. src/domain/strategies/PaymentStrategy.ts        (la interface)
+  2. src/domain/strategies/CreditCardStrategy.ts     (estrategia concreta)
+  3. src/domain/strategies/PayPalStrategy.ts         (otra estrategia)
+  4. src/domain/services/PaymentProcessor.ts         (el contexto)
+  5. src/application/use-cases/PayOrderUseCase.ts    (uso real)
+  6. tests/unit/strategies.test.ts                   (tests)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ VAS A APRENDER:
+
+  ✅ Strategy Pattern (encapsular algoritmos)
+  ✅ Polimorfismo en acción
+  ✅ Open/Closed Principle
+  ✅ Dependency Injection
+  ✅ Comparación de algoritmos
+  ✅ Testing de estrategias aisladas
+  ✅ Switching dinámico de estrategias
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 LA REGLA DE ORO:
+
+     "Una estrategia es un algoritmo encapsulado en un objeto.
+      El cliente puede cambiar de estrategia sin cambiar su código.
+      Define una familia de algoritmos, encapsúlalos y hazlos
+      intercambiables."
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 CONSEJO DEL PROFE:
+
+  Mira tú, este patrón brilla cuando tienes:
+  - Varios algoritmos para la misma tarea
+  - Necesidad de cambiar entre ellos en runtime
+  - Quieres evitar if/else gigantes
+
+  Sin Strategy Pattern, acabas con un switch/case lleno de lógica
+  que viola Open/Closed Principle. Con Strategy, añadir un nuevo
+  algoritmo es crear una nueva clase. Fetén, ¿no?
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 EJEMPLO RÁPIDO:
+
+  // SIN Strategy Pattern ❌
+  function processPayment(method: string, amount: number) {
+    if (method === 'creditcard') {
+      // lógica de tarjeta...
+    } else if (method === 'paypal') {
+      // lógica de paypal...
+    } else if (method === 'crypto') {
+      // lógica de crypto...
+    }
+    // Esto crece sin parar...
+  }
+
+  // CON Strategy Pattern ✅
+  const processor = new PaymentProcessor(new CreditCardStrategy());
+  processor.processPayment(details);
+
+  // Cambiar algoritmo dinámicamente
+  processor.setStrategy(new PayPalStrategy());
+  processor.processPayment(details);
+
+═══════════════════════════════════════════════════════════════════════
+
+🏆 RUTA DE APRENDIZAJE:
+
+  Repository Pattern
+        ↓
+  Controller-Service
+        ↓
+  Error Handling
+        ↓
+  Specification Pattern
+        ↓
+  Strategy Pattern  ← ESTÁS AQUÍ
+        ↓
+  Library System (Hexagonal)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎮 PRUÉBALO EN VIVO:
+
+  Una vez levantado el servidor (npm run dev):
+
+  # Crear una orden
+  curl -X POST http://localhost:3000/api/orders \
+    -H "Content-Type: application/json" \
+    -d '{
+      "customerId": "customer-123",
+      "items": [{
+        "productId": "prod-1",
+        "productName": "Laptop",
+        "quantity": 1,
+        "unitPrice": 999.99
+      }]
+    }'
+
+  # Pagar con tarjeta
+  curl -X POST http://localhost:3000/api/payments \
+    -H "Content-Type: application/json" \
+    -d '{
+      "orderId": "ORD-...",
+      "paymentMethod": "creditcard",
+      "customerEmail": "test@example.com"
+    }'
+
+  # Comparar comisiones
+  curl "http://localhost:3000/api/payments/compare-fees?amount=100"
+
+═══════════════════════════════════════════════════════════════════════
+
+💰 ESTRATEGIAS DISPONIBLES:
+
+  creditcard   → 2.9% + 0.30 EUR (rápido, moderado)
+  paypal       → 3.4% + 0.35 EUR (rápido, caro)
+  crypto       → 1% (lento, barato, mínimo 10 EUR)
+  banktransfer → 1 EUR fijo (lento, mejor para montos grandes)
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Venga, a darle caña! 🚀
+
+El Strategy Pattern es como tener un equipo de especialistas:
+cada uno hace lo mismo (procesar pagos) pero de forma diferente.
+Tú eliges cuál usar según el contexto.
+
+-- El Profe Millo
+   "Los buenos arquitectos no escriben if/else,
+    escriben estrategias"
+
+═══════════════════════════════════════════════════════════════════════
